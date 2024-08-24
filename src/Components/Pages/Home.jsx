@@ -3,7 +3,10 @@ import {Suspense} from 'react'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../Loader/Loader'
 import Island from '../../Models/Island'
-
+// import { Sky } from '@react-three/drei'
+import Sky from '../../Models/Sky'
+import Plane from '../../Models/Plane'
+import Bird from '../../Models/Bird'
 const Home = () => {
 
   const adjustIslandForScreenSize = () =>{
@@ -40,12 +43,17 @@ const Home = () => {
               {/*<pointLight />  this light emits lights in all direction from single point */}
               {/* <spotLight /> it is simillar to pointLight but it provides in a shape of a cone so we can provide an angle*/}
               <hemisphereLight skycolor='#b1e1ff' groundColor='#000' intensity={1}/> {/* it illuminates the scene with gradient*/}
+
+              {/* <Sky /> */}
+              <Bird />
+              <Sky />
               
               <Island 
                 position={islandPosition}
                 scale={islandScale}
                 rotation={islandRotation}
               />
+              <Plane />
             </Suspense>
         </Canvas>
         
