@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import {Suspense} from 'react'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../Loader/Loader'
@@ -32,11 +33,13 @@ const Home = () => {
         camera={{near: 0.1, far:1000}}
         > 
             <Suspense fallback={<Loader />}> {/* Suspense used as a wrapper for rendering the loading screen */}
-              <directionalLight />
-              <ambientLight />
-              <pointLight />
-              <spotLight />
-              <hemisphereLight />
+              <directionalLight position={[1, 1, 1]} intensity={2}/> {/* this light refers to the light coming from a distance like from sun */}
+              <ambientLight intensity={0.5}/> {/* this light illuminates the whole objects equally without casting shadows */}
+              
+              {/* we can remove the pointlight as we have sun and ambientLight */}
+              {/*<pointLight />  this light emits lights in all direction from single point */}
+              {/* <spotLight /> it is simillar to pointLight but it provides in a shape of a cone so we can provide an angle*/}
+              <hemisphereLight skycolor='#b1e1ff' groundColor='#000' intensity={1}/> {/* it illuminates the scene with gradient*/}
               
               <Island 
                 position={islandPosition}
