@@ -13,7 +13,7 @@ import { useFrame, useThree } from '@react-three/fiber'
 import {a} from '@react-spring/three'
 
 import islandScene from '../assets/3d/island.glb'
-const Island =({isRotating, setIsRotating, ...props}) => {
+const Island =({isRotating, setIsRotating, setCurrentStage, ...props}) => {
   const islandRef = useRef()
 
   // we need to get access to 3js renderer and viewport. to do so 
@@ -92,7 +92,7 @@ const Island =({isRotating, setIsRotating, ...props}) => {
     const canvas = gl.domElement
     canvas.addEventListener('pointerdown', handlePointerDown)
     canvas.addEventListener('pointerup', handlePointerUp)
-    document.addEventListener('pointermove', handlePointerMove)
+    canvas.addEventListener('pointermove', handlePointerMove)
     document.addEventListener('keydown', handleKeyDown)
     document.addEventListener('keyup', handleKeyUp)
 
@@ -119,6 +119,8 @@ const Island =({isRotating, setIsRotating, ...props}) => {
         if(Math.abs(rotationSpeed.current) < 0.001){
           rotationSpeed.current = 0
         }
+
+        islandRef.current.rotation.y += rotationSpeed.current
      }else {
       const rotation = islandRef.current.rotation.y 
 
