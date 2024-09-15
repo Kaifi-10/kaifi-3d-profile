@@ -35,7 +35,7 @@ const renderContent = {
   ),
   4:(
     <InfoBox 
-      text="Looking for a Front End Developer to join my team? I'm just a few keystrokes away"
+      text="Looking for a Front End Developer to join your team? I'm just a few keystrokes away"
       link="/contact"
       txtBtn="Let's Talk"
     />
