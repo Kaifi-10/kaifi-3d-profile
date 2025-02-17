@@ -16,7 +16,9 @@ import scene from '../assets/3d/fox.glb'
   const { actions } = useAnimations(animations, group)
 
     useEffect(() => {
-      if (currentAnimation) {
+      Object.values(actions).forEach((action) =>action.stop())
+
+      if (actions[currentAnimation]) {
         actions[currentAnimation].play()
       }
     }, [currentAnimation, actions])
