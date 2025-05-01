@@ -1,5 +1,6 @@
 import { meta, shopify, starbucks, tesla } from "../assets/images";
 import infosys from "../assets/images/infosys_logo.png";
+import cart from "../assets/icons/cart.png";
 import {
     car,
     contact,
@@ -24,8 +25,13 @@ import {
     summiz,
     tailwindcss,
     threads,
-    typescript
+    typescript,
+    
+
 } from "../assets/icons";
+import Logo_medify from "../assets/icons/Logo_medify.svg";
+import qStatic from "../assets/icons/qtrip_static.png";
+import qDynamic from "../assets/icons/qdynamic.png";
 
 export const skills = [
     {
@@ -198,45 +204,45 @@ export const socialLinks = [
 
 export const projects = [
     {
+        iconUrl: cart,
+        theme: 'btn-back-green',
+        name: 'QKart Frontend',
+        description: 'QKart is a feature-rich e-commerce application that offers a wide variety of high-quality products for customers to browse, choose, and purchase. ',
+        link: 'https://kaifi-qkart-frontend.vercel.app/',
+    },
+    {
+        iconUrl: Logo_medify,
+        theme: 'btn-back-blue',
+        name: 'Medical Slot Booking Platform',
+        description: 'A React web app that lets users find medical centers by state and city in the USA and book appointments easily.',
+        link: 'https://medify-taupe.vercel.app/',
+    },
+    {
         iconUrl: pricewise,
         theme: 'btn-back-red',
-        name: 'Amazon Price Tracker',
-        description: 'Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.',
-        link: 'https://github.com/adrianhajdin/pricewise',
+        name: 'Expense Tracker',
+        description: 'A React-based Expense Tracker app that helps you record, manage, and visualize all your daily spending in one place.',
+        link: 'https://kaifi-expense-tracker.vercel.app/',
     },
     {
-        iconUrl: threads,
-        theme: 'btn-back-green',
-        name: 'Full Stack Threads Clone',
-        description: 'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-        link: 'https://github.com/adrianhajdin/threads',
-    },
-    {
-        iconUrl: car,
-        theme: 'btn-back-blue',
-        name: 'Car Finding App',
-        description: 'Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.',
-        link: 'https://github.com/adrianhajdin/project_next13_car_showcase',
-    },
-    {
-        iconUrl: snapgram,
+        iconUrl: qStatic,
         theme: 'btn-back-pink',
-        name: 'Full Stack Instagram Clone',
-        description: 'Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.',
-        link: 'https://github.com/adrianhajdin/social_media_app',
+        name: 'QTrip Static',
+        description: 'QTrip is a static travel website designed for travelers seeking diverse adventures and experiences across various cities around the world.',
+        link: 'https://qtrip-static-kaifi.vercel.app/index.html',
     },
     {
-        iconUrl: estate,
+        iconUrl: qDynamic,
         theme: 'btn-back-black',
-        name: 'Real-Estate Application',
-        description: 'Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.',
-        link: 'https://github.com/adrianhajdin/projects_realestate',
+        name: 'QTrip Dynamic',
+        description: 'QTrip is a dynamic travel website that helps travelers discover and explore a wide range of adventures across various cities worldwide.',
+        link: 'https://qtrip-dynamic-phi-one.vercel.app/',
     },
     {
         iconUrl: summiz,
         theme: 'btn-back-yellow',
-        name: 'AI Summarizer Application',
-        description: 'App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.',
-        link: 'https://github.com/adrianhajdin/project_ai_summarizer',
+        name: 'BOT-AI',
+        description: 'This React-based web application allows users to interact and have real-time conversations with an AI model through a chat interface.',
+        link: 'https://kaifi-bot-ai.vercel.app/',
     }
 ];
