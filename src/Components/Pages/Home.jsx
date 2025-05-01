@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import {Suspense, useState} from 'react'
+import {Suspense, useState, useEffect, useRef} from 'react'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../Loader/Loader'
 import Island from '../../Models/Island'
@@ -8,10 +8,24 @@ import Sky from '../../Models/Sky'
 import Plane from '../../Models/Plane'
 import Bird from '../../Models/Bird'
 import HomeInfo from '../HomeInfo/HomeInfo'
+import sakura from '../../assets/sakura.mp3'
+import { soundoff, soundon } from '../../assets/icons'
 const Home = () => {
-
+  const audioRef = useRef(new Audio(sakura))
+  audioRef.current.volume = 0.4
+  audioRef.current.loop = true
   const [isRotating, setIsRotating] = useState(false)
   const [currentStage, setCurrentStage] = useState(1)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  useEffect(() => {
+    if(isPlaying){
+      audioRef.current.play()
+    }
+
+    return () => audioRef.current.pause()
+  }, [isPlaying])
+    
 
   const adjustIslandForScreenSize = () =>{
     let screenScale = null
@@ -79,12 +93,21 @@ const Home = () => {
               />
               <Plane 
               isRotating={isRotating}
-                planeScale={planeScale}
-                planePosition={planePosition}
+                scale={planeScale}
+                position={planePosition}
                 rotation={[0, 20, 0]}
               />
             </Suspense>
         </Canvas>
+
+        <div className='absolute bottom-5 left-5 z-20'>
+          <img 
+            src={!isPlaying? soundoff: soundon}
+            alt='Sound'
+            className='w-10 h-10 cursor-pointer object-contain'
+            onClick={() => setIsPlaying((prev) => !prev)}
+          />
+        </div>
         
     </section>
   )
