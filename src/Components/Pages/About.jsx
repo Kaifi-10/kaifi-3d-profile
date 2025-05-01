@@ -53,7 +53,7 @@ const About = () => {
                   <img
                     src={experience.icon}
                     alt={experience.company_name}
-                    className='w-[70%] h-[60%] object-contain'
+                    className='w-[100%] h-[100%] object-contain'
                   />
                 </div>}
                 iconStyle={{ background: experience.iconBg }}
