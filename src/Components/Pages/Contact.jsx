@@ -62,7 +62,7 @@ const Contact = () => {
   return (
     <section className='relative flex lg:flex-row flex-col max-container h-[100vh]'>
       {alert.show && <Alert {...alert}/>}
-      <Alert text="test"/>
+      
       <div className='glex-1 min-w-[50%] flex flex-col'>
         <h1 className='head-text'>Get in Touch</h1>
         <form
